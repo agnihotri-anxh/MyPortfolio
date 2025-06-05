@@ -17,7 +17,6 @@ Visit my portfolio at: [https://agnihotri-anxh.github.io/MyPortfolio/](https://a
 ## 📋 Features
 
 - Responsive Design
-- Modern UI/UX
 - Interactive Elements
 - Project Showcase
 - Skills Display
