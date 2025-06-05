@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansh Agnihotri - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> {/* Added Font Awesome for GitHub icon */}
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col;
+        }
+        .nav-link {
+            @apply text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300;
+        }
+        .nav-link-active {
+            @apply text-blue-600 bg-blue-100;
+        }
+        .mobile-nav-link {
+             @apply block text-gray-600 hover:text-blue-600 hover:bg-gray-100 px-3 py-2 rounded-md text-base font-medium transition-colors duration-300;
+        }
+        .project-tech-stack {
+            @apply text-xs text-indigo-600 font-semibold mb-2 tracking-wide uppercase;
+        }
+        .skill-category-title {
+            @apply text-xl font-semibold text-gray-700 mt-6 mb-3 text-center md:text-left;
+        }
+        .education-entry {
+            @apply mb-6 p-4 border border-gray-200 rounded-lg bg-gray-50;
+        }
+        .contact-button {
+            @apply inline-flex items-center justify-center text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300 w-full sm:w-auto;
+        }
+        /* Loading Animation */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #3B82F6;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Typing Animation */
+        .typing-animation {
+            overflow: hidden;
+            border-right: 2px solid #3B82F6;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3B82F6 }
+        }
+        /* Floating Animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-700">
+    <!-- Loading Animation -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <nav class="bg-white shadow-md fixed w-full z-10 top-0">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl font-bold text-blue-600">Ansh Agnihotri</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link nav-link-active" data-section="home">Home</a>
+                        <a href="#about" class="nav-link" data-section="about">About</a>
+                        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                        <a href="#education" class="nav-link" data-section="education">Education</a>
+                        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="mobile-nav-link" data-section="home-mobile">Home</a>
+                <a href="#about" class="mobile-nav-link" data-section="about-mobile">About</a>
+                <a href="#projects" class="mobile-nav-link" data-section="projects-mobile">Projects</a>
+                <a href="#skills" class="mobile-nav-link" data-section="skills-mobile">Skills</a>
+                <a href="#education" class="mobile-nav-link" data-section="education-mobile">Education</a>
+                <a href="#contact" class="mobile-nav-link" data-section="contact-mobile">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white pt-32 pb-20 min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-10"></div>
+        <div class="text-center px-4 relative z-10">
+            <img src="https://placehold.co/150x150/FFFFFF/3B82F6?text=AA" alt="Ansh Agnihotri" class="w-40 h-40 md:w-48 md:h-48 rounded-full mx-auto mb-8 shadow-lg border-4 border-white float">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 typing-animation">Ansh Agnihotri</h1>
+            <p class="text-xl md:text-2xl font-light mb-8">Electronics and Communication Engineering Student</p> {/* You can customize this tagline */}
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#projects" class="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    View My Work
+                </a>
+                <a href="#contact" class="bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition duration-300 transform hover:scale-105">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">About Me</h2>
+            <div class="text-center text-lg text-gray-600 leading-relaxed">
+                <p class="mb-4">
+                    Hello! I'm Ansh Agnihotri, a passionate **Electronics and Communication Engineering student** based in Gwalior, Madhya Pradesh.
+                </p>
+                <p class="mb-4">
+                    I have a strong interest in **Machine Learning, Deep Learning, and Natural Language Processing**. I thrive on **building innovative projects** that leverage AI to solve real-world problems.
+                </p>
+                <p>
+                    Currently, I'm focused on **exploring and enhancing my skills in Generative AI**, constantly seeking new challenges and opportunities to expand my knowledge in this exciting field.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card group">
+                    <div class="relative overflow-hidden rounded-md mb-4">
+                        <img src="https://placehold.co/600x400/EBF4FF/3B82F6?text=Amazon+Review+Analyzer" alt="Amazon Product Review Analyzer Screenshot" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">Amazon Product Review Analyzer</h3>
+                    <p class="project-tech-stack">Python, NLP, XGBoost, Streamlit</p>
+                    <p class="text-gray-600 mb-4 text-sm flex-grow">
+                        Implemented sentiment analysis using TF-IDF and XGBClassifier. Deployed an interactive web application via Streamlit Cloud.
+                    </p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <a href="https://amazon-appuct-review-analyzer-tkhtbiuwzkk6d4azcm4fuv.streamlit.app/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center group-hover:translate-x-2 transition-transform duration-300">
+                            View Project
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card group">
+                    <div class="relative overflow-hidden rounded-md mb-4">
+                        <img src="https://placehold.co/600x400/E0F2FE/0EA5E9?text=Skin+Cancer+Detection" alt="Skin Cancer Detection App Screenshot" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">Skin Cancer Detection</h3>
+                    <p class="project-tech-stack">CNN, TensorFlow, Streamlit</p>
+                    <p class="text-gray-600 mb-4 text-sm flex-grow">
+                        Developed a CNN-based model to classify melanoma and non-melanoma cases. Deployed as a Streamlit web app for real-time prediction.
+                    </p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <a href="https://skindetectnet-jni9kt32utgljfk3miapbe.streamlit.app/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center group-hover:translate-x-2 transition-transform duration-300">
+                            View Project
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card group">
+                    <div class="relative overflow-hidden rounded-md mb-4">
+                        <img src="https://placehold.co/600x400/D1FAE5/10B981?text=Image+Caption+Generator" alt="Image Caption Generator Screenshot" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-blue-600 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">Image Caption Generator</h3>
+                    <p class="project-tech-stack">DenseNet201, LSTM, TensorFlow, Streamlit</p>
+                    <p class="text-gray-600 mb-4 text-sm flex-grow">
+                        Built a model combining DenseNet201 and LSTM for generating image captions. Trained on the Flickr8k dataset and deployed using Streamlit.
+                    </p>
+                    <div class="mt-auto flex justify-between items-center">
+                        <a href="https://image-caption-generator-akpkhthp9ckrexsa8dbdnb.streamlit.app/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center group-hover:translate-x-2 transition-transform duration-300">
+                            View Project
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <div class="flex space-x-2">
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors duration-300">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="skill-category-title">Programming Languages</h3>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                        <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">Python</span>
+                        <span class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">C</span>
+                        <span class="bg-red-100 text-red-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">C++</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="skill-category-title">Machine Learning</h3>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                        <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">TensorFlow</span>
+                        <span class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">Scikit-learn</span>
+                        <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">OpenCV</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="skill-category-title">Deep Learning</h3>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                        <span class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">CNN</span>
+                        <span class="bg-pink-100 text-pink-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">LSTM</span>
+                        <span class="bg-teal-100 text-teal-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">Transformers</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="skill-category-title">Tools and Platforms</h3>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                        <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">Jupyter Notebook</span>
+                        <span class="bg-lime-100 text-lime-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">Google Colab</span>
+                        <span class="bg-cyan-100 text-cyan-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">VS Code</span>
+                        <span class="bg-fuchsia-100 text-fuchsia-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">Kaggle</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="skill-category-title">Version Control</h3>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                        <span class="bg-sky-100 text-sky-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">Git</span>
+                        <span class="bg-rose-100 text-rose-700 px-4 py-2 rounded-full font-medium text-sm hover:scale-105 transition-transform duration-300">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title">Education</h2>
+            <div class="education-entry">
+                <h3 class="text-xl font-semibold text-gray-800">Indian Institute of Information Technology Senapati, Manipur</h3>
+                <p class="text-md text-blue-600 font-medium">B.Tech in Electronics and Communication Engineering</p>
+                <p class="text-sm text-gray-500">Imphal, Manipur</p>
+                <p class="text-sm text-gray-500">Dec. 2022 – Present</p>
+                <p class="text-sm text-gray-600 mt-1">CPI: 7.36</p>
+            </div>
+            </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gradient-to-br from-gray-800 to-gray-900 text-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">Get In Touch</h2>
+            <p class="text-lg text-gray-400 mb-12 text-center max-w-2xl mx-auto">
+                I'm always open to discussing new projects, creative ideas or opportunities to be part of something great.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-gray-700 bg-opacity-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-blue-600 p-2 rounded-lg">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <a href="mailto:agnihotriansh05@gmail.com" class="text-gray-300 hover:text-white transition-colors duration-300">agnihotriansh05@gmail.com</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-blue-600 p-2 rounded-lg">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Gwalior, Madhya Pradesh, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://linkedin.com/in/ansh-agnihotri-942a56257" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-blue-600 p-3 rounded-lg transition-colors duration-300">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M19.752 3H4.248A1.25 1.25 0 003 4.248v15.504A1.25 1.25 0 004.248 21h15.504A1.25 1.25 0 0021 19.752V4.248A1.25 1.25 0 0019.752 3zM8.356 18.1H5.93V9.938h2.425v8.162zM7.144 8.902a1.392 1.392 0 110-2.785 1.392 1.392 0 010 2.785zM18.1 18.1h-2.426v-4.25c0-1.014-.02-2.318-1.412-2.318-1.414 0-1.632 1.104-1.632 2.245v4.323h-2.426V9.937h2.328v1.068h.032c.324-.61 1.116-1.252 2.298-1.252 2.46 0 2.913 1.618 2.913 3.723v4.626z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="https://github.com/agnihotri-anxh" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-900 p-3 rounded-lg transition-colors duration-300">
+                            <i class="fab fa-github w-6 h-6 text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 transform hover:scale-105">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <p>&copy; <span id="currentYear"></span> Ansh Agnihotri. All rights reserved.</p>
+        <p class="text-sm">Designed with <a href="https://tailwindcss.com/" class="hover:text-blue-500" target="_blank" rel="noopener">Tailwind CSS</a></p>
+    </footer>
+
+    <script>
+        // Loading Animation
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButtonIcons = mobileMenuButton.querySelectorAll('svg');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButtonIcons[0].classList.toggle('hidden'); 
+            mobileMenuButtonIcons[1].classList.toggle('hidden'); 
+        });
+
+        // Close mobile menu when a link is clicked
+        const allNavLinks = document.querySelectorAll('nav a[href^="#"]'); 
+        allNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenuButtonIcons[0].classList.remove('hidden');
+                    mobileMenuButtonIcons[1].classList.add('hidden');
+                }
+            });
+        });
+
+        // Smooth scroll for navigation links & active link highlighting
+        const sections = document.querySelectorAll('section[id], header[id]');
+        const desktopNavLinks = document.querySelectorAll('nav .hidden a[href^="#"]');
+        const mobileNavLinksForActiveState = document.querySelectorAll('#mobile-menu a[href^="#"]');
+
+
+        function changeActiveLink() {
+            let index = sections.length;
+            const navbarHeight = document.querySelector('nav').offsetHeight; 
+
+            while(--index && window.scrollY + navbarHeight + 50 < sections[index].offsetTop) {} 
+
+            desktopNavLinks.forEach((link) => link.classList.remove('nav-link-active', 'bg-blue-100'));
+            mobileNavLinksForActiveState.forEach(mlink => {
+                 mlink.classList.remove('bg-blue-100', 'text-blue-700', 'font-semibold');
+                 mlink.classList.add('text-gray-600', 'hover:bg-gray-100', 'hover:text-blue-600');
+            });
+            
+            const currentSectionId = sections[index] ? sections[index].id : null;
+
+            if (currentSectionId) {
+                const activeDesktopLink = document.querySelector(`nav .hidden a[href="#${currentSectionId}"]`);
+                if (activeDesktopLink) {
+                    activeDesktopLink.classList.add('nav-link-active', 'bg-blue-100');
+                }
+                const activeMobileLink = document.querySelector(`#mobile-menu a[href="#${currentSectionId}"]`);
+                 if (activeMobileLink) {
+                    activeMobileLink.classList.add('bg-blue-100', 'text-blue-700', 'font-semibold');
+                    activeMobileLink.classList.remove('text-gray-600', 'hover:bg-gray-100', 'hover:text-blue-600');
+                }
+            } else if (sections.length > 0 && window.scrollY < sections[0].offsetTop) {
+                const homeDesktopLink = document.querySelector(`nav .hidden a[href="#home"]`);
+                if (homeDesktopLink) homeDesktopLink.classList.add('nav-link-active', 'bg-blue-100');
+                const homeMobileLink = document.querySelector(`#mobile-menu a[href="#home"]`);
+                if (homeMobileLink) {
+                    homeMobileLink.classList.add('bg-blue-100', 'text-blue-700', 'font-semibold');
+                    homeMobileLink.classList.remove('text-gray-600', 'hover:bg-gray-100', 'hover:text-blue-600');
+                }
+            }
+        }
+
+        window.addEventListener('load', changeActiveLink); 
+        window.addEventListener('scroll', changeActiveLink);
+
+        allNavLinks.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('nav').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - navbarHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
