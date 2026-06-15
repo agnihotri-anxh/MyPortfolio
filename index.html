@@ -1,246 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ansh Agnihotri — AI Engineer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ansh Agnihotri — AI & NLP Engineer</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<!-- Structured Stylesheet -->
+<link rel="stylesheet" href="css/style.css"/>
 </head>
-
 <body>
 
-    <nav class="site-nav">
-        <div class="container nav-container">
-            <a class="brand" href="#hero">Ansh Agnihotri</a>
-            <button class="nav-toggle" aria-label="Open navigation">☰</button>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <!-- STICKY GLASS HEADER -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">Ansh Agnihotri</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#services" class="capsule-link">Services</a>
+        <a href="#works">Works</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="Resume_Ansh_Agnihotri.pdf" download>Resume</a>
+      </nav>
+      <div class="contact-phone">
+        <a href="tel:+919354616027" class="phone-num">+91 93546 16027</a>
+        <a href="tel:+919354616027" class="phone-icon-btn" aria-label="Call Me">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="section hero-section" id="hero">
+    <div class="container hero-grid">
+      <!-- Left Column -->
+      <div class="hero-left">
+        <h1 class="hero-heading">Hey There,<br/>I'm Ansh Agnihotri</h1>
+        <p class="hero-bio">
+          B.Tech graduate from IIIT Manipur specializing in AI and NLP engineering. I design and ship production-ready RAG pipelines, LLM-orchestrated search systems, and backend APIs — currently building enterprise-grade legal AI at Taxmann. I care about systems that work reliably at scale, not just in notebooks.
+        </p>
+        
+        <!-- Core Skills Set Panel -->
+        <div class="hero-skills-panel">
+          <div class="hero-skills-label">Core Tech Stack:</div>
+          <div class="hero-skills-tags">
+            <span class="hero-skill-tag">Python</span>
+            <span class="hero-skill-tag">Natural Language Preprocessing</span>
+            
+            <span class="hero-skill-tag">FastAPI</span>
+            <span class="hero-skill-tag">RAG &amp; LLM Orchestration</span>
+            <span class="hero-skill-tag">Vector Databases (Milvus, FAISS)</span>
+            <span class="hero-skill-tag">Docker &amp; AWS ECR</span>
+            <span class="hero-skill-tag">PyTorch</span>
+            
+          </div>
+        </div>
+        
+        <div class="hero-email-row">
+          <a href="mailto:agnihotriansh05@gmail.com" class="hero-email">agnihotriansh05@gmail.com</a>
+          <div class="experience-badge">
+            <span class="exp-number">4</span>
+            <span class="exp-label">YEARS<br/>B.TECH ECE</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column -->
+      <div class="hero-right">
+        <!-- SVG brush paint stroke splash background -->
+        <svg class="brush-splash" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60,320 C120,160 310,120 410,180 C470,220 440,360 330,420 C210,480 110,410 60,320 Z" fill="#0d7c66" opacity="0.12"/>
+          <path d="M100,260 C170,130 300,110 380,200 C430,250 360,380 280,400 C190,420 140,350 100,260 Z" fill="#ff5733" opacity="0.08"/>
+        </svg>
+        
+        <!-- Portrait Photo Frame -->
+        <div class="photo-wrapper">
+          <img src="ansh.png" alt="Ansh Agnihotri"/>
+        </div>
+        
+        <!-- Hover description overlay -->
+        <div class="hero-desc-overlay">
+          I build reliable AI/NLP systems, and I love engineering scale.
+        </div>
+        
+        <!-- Rotating Seal badge -->
+        <div class="seal-badge">
+          <div class="seal-svg-container">
+            <svg viewBox="0 0 100 100" width="100" height="100">
+              <path id="sealPath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
+              <text><textPath href="#sealPath" class="seal-text">IIIT MANIPUR · AI NLP DEVELOPER ·</textPath></text>
+              <circle cx="50" cy="50" r="22" fill="#0f172a" />
+              <polygon points="50,38 53,44 60,44 55,48 57,55 50,51 43,55 45,48 40,44 47,44" fill="#ffb703" />
+            </svg>
+          </div>
+          <span class="seal-label">Est. 2022</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION ("What do I build?") -->
+  <section class="section section-white" id="services">
+    <div class="container services-grid">
+      <!-- Left List of Cards -->
+      <div class="services-left">
+        <!-- Card 1 -->
+        <div class="service-card active">
+          <div class="icon-circle teal-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>
+          </div>
+          <div class="service-details">
+            <h4>AI &amp; RAG Systems</h4>
+            <p>High-precision ingestion and query logic</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card">
+          <div class="icon-circle yellow-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path></svg>
+          </div>
+          <div class="service-details">
+            <h4>Vector Search</h4>
+            <p>Milvus &amp; FAISS semantic index layers</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card">
+          <div class="icon-circle coral-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <div class="service-details">
+            <h4>Backend &amp; APIs</h4>
+            <p>FastAPI services and Docker deploy pipelines</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Description -->
+      <div class="services-right">
+        <span class="heading-sub">My Specializations</span>
+        <h2 class="heading-main">What do I build?</h2>
+        <p class="desc-para">
+          I design and implement intelligent data pipelines, custom LLM solutions, and highly reliable backend systems. Using structured parsing and high-performance vector search, I turn raw data into contextual search layers that perform reliably at scale.
+        </p>
+        
+        <div class="metrics-container">
+          <div class="metric-item">
+            <span class="metric-num">10+</span>
+            <span class="metric-lbl">Projects Built</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-num">95%</span>
+            <span class="metric-lbl">Precision Achieved</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="experience-layout">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <span class="heading-sub">Qualifications</span>
+          <h2 class="heading-main">My Work Experience</h2>
+        </div>
+        
+        <!-- Timeline Row 1 -->
+        <div class="timeline-row">
+          <div class="timeline-left">
+            <div class="timeline-org">Taxmann</div>
+            <div class="timeline-period">Jan 2026 – Present · New Delhi</div>
+          </div>
+          <div class="timeline-middle">
+            <div class="timeline-dot orange-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h3 class="timeline-role">AI NLP Intern</h3>
+            <ul class="timeline-bullets">
+              <li>Engineered Python backend utilities to clean and ingest massive unformatted datasets into LLM orchestrators.</li>
+              <li>Building enterprise RAG-based legal search with Milvus (Zilliz) over millions of vector embeddings.</li>
+              <li>Built a custom Model Context Protocol (MCP) Tool for Claude to directly connect with and write formatted data to Adobe InDesign, automating IBC amendment book updates.</li>
             </ul>
+          </div>
         </div>
-    </nav>
-
-    <header id="hero">
-        <div class="container hero-inner">
-            <div class="hero-text">
-                <h1>Hello, I'm <span class="accent">Ansh Agnihotri</span></h1>
-                <h2>AI Engineer — B.Tech (ECE), IIIT Senapati Manipur</h2>
-                <p>I design and deploy production-ready machine learning systems with emphasis on Retrieval-Augmented
-                    Generation, scalable data pipelines, and model serving. Experienced building end-to-end solutions
-                    from data ingestion to deployment.</p>
-                <div class="hero-cta">
-                    <a class="btn" href="#projects">View Projects</a>
-                    <a class="btn btn-secondary" href="#contact">Contact</a>
-                    <a class="btn" href="Resume-AnshAgnihotri.pdf" download="Resume-AnshAgnihotri.pdf"
-                        style="background:transparent;color:var(--text);border:1px solid rgba(11,18,32,0.06);">Download
-                        Resume</a>
-                </div>
-            </div>
-            <div class="hero-aside">
-                <div class="profile-card">
-                    <div class="avatar"><img src="ansh.png" alt="Ansh Agnihotri"></div>
-                    <div class="contact-icons">
-                        <a href="tel:+919354616027" aria-label="Phone">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                focusable="false">
-                                <path
-                                    d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.01l-2.2 2.21z" />
-                            </svg>
-                        </a>
-                        <a href="mailto:agnihotriansh05@gmail.com" aria-label="Email">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                focusable="false">
-                                <path
-                                    d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                            </svg>
-                        </a>
-                        <a href="https://linkedin.com/in/ansh-agnihotri" target="_blank" rel="noopener"
-                            aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                focusable="false">
-                                <path
-                                    d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v13H0V8zm7.5 0h4.8v1.8h.1c.7-1.3 2.4-2.7 4.9-2.7 5.2 0 6.2 3.4 6.2 7.9V21H18v-6.4c0-1.5 0-3.4-2.1-3.4-2.1 0-2.4 1.6-2.4 3.3V21H7.5V8z" />
-                            </svg>
-                        </a>
-                        <a href="https://github.com/agnihotri-anxh" target="_blank" rel="noopener" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                focusable="false">
-                                <path
-                                    d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.95 3.2 9.15 7.64 10.63.56.1.76-.24.76-.54 0-.27-.01-1-.02-1.96-3.11.68-3.77-1.5-3.77-1.5-.5-1.27-1.22-1.61-1.22-1.61-.99-.67.08-.66.08-.66 1.1.08 1.67 1.13 1.67 1.13.97 1.66 2.55 1.18 3.17.9.1-.7.38-1.18.69-1.45-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.41.11-2.95 0 0 .95-.31 3.12 1.15a10.8 10.8 0 012.84-.38c.96 0 1.93.13 2.84.38 2.16-1.46 3.11-1.15 3.11-1.15.62 1.54.24 2.67.12 2.95.72.78 1.16 1.78 1.16 3 0 4.29-2.62 5.23-5.11 5.51.39.34.73 1.01.73 2.04 0 1.47-.01 2.66-.01 3.02 0 .3.2.66.77.55C20.05 20.9 23.25 16.7 23.25 11.75 23.25 5.48 18.27.5 12 .5z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="education" class="section-padding">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="project-card">
-                <h3>IIIT Senapati Manipur</h3>
-                <p class="tech-stack">Dec 2022 – Present</p>
-                <p>B.Tech in Electronics &amp; Communication Engineering — CGPA: 7.53/10</p>
-                <p>Relevant Coursework: Data Structures &amp; Algorithms, Object-Oriented Programming, Operating
-                    Systems, Computer Networks, Database Management Systems (DBMS)</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section-padding">
-        <div class="container">
-            <h2>🛠️ Technical Skills</h2>
-            <div class="skill-list">
-                <div class="skill-card">
-                    <h3>Languages & Tools</h3>
-                    <ul>
-                        <li>Python, C++, JavaScript, SQL, HTML/CSS</li>
-                        <li>Pandas, NumPy, Scikit-learn</li>
-                        <li>Git, Docker, REST APIs</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Frameworks & Databases</h3>
-                    <ul>
-                        <li>PyTorch, TensorFlow, LangChain, Langgraph</li>
-                        <li>Flask, FastAPI</li>
-                        <li>MongoDB, Pinecone, FAISS</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>ML & DevOps</h3>
-                    <ul>
-                        <li>LLMs, Streamlit, ElevenLabs TTS</li>
-                        <li>GitHub Actions CI/CD, AWS (ECR, EC2), Render</li>
-                        <li>Model tooling: Hugging Face, XGBoost, snnTorch</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section-padding bg-light">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="project-card">
-                <h3>Zidio Development — Data Science Intern</h3>
-                <p class="tech-stack">May 2025 – June 2025 (Remote)</p>
-                <ul>
-                    <li>Engineered a scalable fraud detection service using an XGBoost model to process over 590K
-                        financial transactions, achieving 95.9% balanced accuracy.</li>
-                    <li>Designed and implemented a resilient ETL pipeline to automate data ingestion and preprocessing.
-                    </li>
-                    <li>Developed and deployed a Streamlit web app for interactive monitoring and interpretation of
-                        model predictions.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section-padding bg-light">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>HealthMate</h3>
-                    <p class="tech-stack">Flask, LangChain, Groq API, Pinecone, Docker, AWS ECR, GitHub Actions</p>
-                    <p>Developed a medical AI chatbot using Groq Llama 3.1 8B with a RAG architecture over 50+ research
-                        papers. Containerized with Docker and deployed via GitHub Actions; used Pinecone for 100k+
-                        embeddings (384-d) with cosine similarity.</p>
-                    <div class="project-tags"><span class="tag">RAG</span><span class="tag">Pinecone</span><span
-                            class="tag">Docker</span></div>
-                    <p><a href="#" class="btn">GitHub</a></p>
-                </div>
-
-                <div class="project-card">
-                    <h3>AI-Powered Data Science Interviewer</h3>
-                    <p class="tech-stack">Flask, Groq API, FAISS, MongoDB, ElevenLabs TTS</p>
-                    <p>Built a RAG-based mock interviewer using Mixtral-8x7B and FAISS for similarity search over 5,000+
-                        chunks. Added MongoDB-backed auth and ElevenLabs TTS for voice-enabled interviews.</p>
-                    <div class="project-tags"><span class="tag">RAG</span><span class="tag">FAISS</span><span
-                            class="tag">TTS</span></div>
-                    <p><a href="https://ai-powered-data-science-mock-interviewer-afn0.onrender.com/"
-                            class="btn">Demo</a></p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Audio Classification Using SNN</h3>
-                    <p class="tech-stack">Python, PyTorch, snnTorch, Librosa</p>
-                    <p>Implemented a Spiking Neural Network for environmental sound classification on UrbanSound8K
-                        (8,732 clips). Achieved 63.19% test accuracy with Macro ROC-AUC 0.817.</p>
-                    <div class="project-tags"><span class="tag">SNN</span><span class="tag">PyTorch</span></div>
-                    <p><a href="#" class="btn">GitHub</a></p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Book Recommendation System</h3>
-                    <p class="tech-stack">Python, Flask, KNN</p>
-                    <p>Launched a Flask app on Render using Scikit-learn KNN collaborative filtering over 270k ratings
-                        to deliver personalized book suggestions.</p>
-                    <div class="project-tags"><span class="tag">KNN</span><span class="tag">Flask</span></div>
-                    <p><a href="#" class="btn">Demo</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <p>Ready to build the next generation of AI? Let's connect!</p>
-            <p>
-                <strong>Ansh Agnihotri</strong>
-            </p>
-            <div class="footer-icons" aria-hidden="false">
-                <a href="tel:+919354616027" aria-label="Phone" title="Call">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                        <path
-                            d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.01l-2.2 2.21z" />
-                    </svg>
-                </a>
-                <a href="mailto:agnihotriansh05@gmail.com" aria-label="Email" title="Email">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                        <path
-                            d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                </a>
-                <a href="https://linkedin.com/in/ansh-agnihotri" target="_blank" rel="noopener" aria-label="LinkedIn"
-                    title="LinkedIn">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                        <path
-                            d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v13H0V8zm7.5 0h4.8v1.8h.1c.7-1.3 2.4-2.7 4.9-2.7 5.2 0 6.2 3.4 6.2 7.9V21H18v-6.4c0-1.5 0-3.4-2.1-3.4-2.1 0-2.4 1.6-2.4 3.3V21H7.5V8z" />
-                    </svg>
-                </a>
-                <a href="https://github.com/agnihotri-anxh" target="_blank" rel="noopener" aria-label="GitHub"
-                    title="GitHub">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                        <path
-                            d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.95 3.2 9.15 7.64 10.63.56.1.76-.24.76-.54 0-.27-.01-1-.02-1.96-3.11.68-3.77-1.5-3.77-1.5-.5-1.27-1.22-1.61-1.22-1.61-.99-.67.08-.66.08-.66 1.1.08 1.67 1.13 1.67 1.13.97 1.66 2.55 1.18 3.17.9.1-.7.38-1.18.69-1.45-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.41.11-2.95 0 0 .95-.31 3.12 1.15a10.8 10.8 0 012.84-.38c.96 0 1.93.13 2.84.38 2.16-1.46 3.11-1.15 3.11-1.15.62 1.54.24 2.67.12 2.95.72.78 1.16 1.78 1.16 3 0 4.29-2.62 5.23-5.11 5.51.39.34.73 1.01.73 2.04 0 1.47-.01 2.66-.01 3.02 0 .3.2.66.77.55C20.05 20.9 23.25 16.7 23.25 11.75 23.25 5.48 18.27.5 12 .5z" />
-                    </svg>
-                </a>
-            </div>
-            <p style="margin-top:12px;color:var(--muted)">&copy; 2025 Ansh Agnihotri. All rights reserved.</p>
-            <h3 style="margin-top:18px;color:var(--text);font-size:1.1em">Certifications &amp; Achievements</h3>
-            <ul style="color:var(--muted);margin-top:8px;">
-                <li>Tata Group GenAI Powered Data Analytics Job Simulation (Forage)</li>
-                <li>Top 5% (Gold) in NPTEL Fundamentals of AI (IIT Madras)</li>
-                <li>Elite (Top 10%) in NPTEL Deep Learning (IIT Ropar)</li>
-                <li>Top 12% Globally in Kaggle Backpack Price Prediction competition</li>
+        
+        <!-- Timeline Row 2 -->
+        <div class="timeline-row">
+          <div class="timeline-left">
+            <div class="timeline-org">Zidio Dev</div>
+            <div class="timeline-period">May 2025 – Jun 2025 · Remote</div>
+          </div>
+          <div class="timeline-middle">
+            <div class="timeline-dot green-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-right">
+            <h3 class="timeline-role">Software Engineer Intern</h3>
+            <ul class="timeline-bullets">
+              <li>Built and documented REST APIs in FastAPI for user profile and auth workflows on a SaaS dashboard.</li>
+              <li>Wrote modular backend service logic, improving data validation and reducing API response errors.</li>
             </ul>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
+  <!-- EDUCATION SECTION -->
+  <section class="section section-white" id="education">
+    <div class="container">
+      <div class="education-layout">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <span class="heading-sub">Academic Background</span>
+          <h2 class="heading-main">Education &amp; Qualifications</h2>
+        </div>
+        
+        <div class="education-card">
+          <!-- Left Part -->
+          <div>
+            <h3 class="edu-uni">IIIT Senapati, Manipur</h3>
+            <p class="edu-degree">B.Tech in Electronics &amp; Communication Engineering</p>
+            <span class="edu-period">Dec 2022 – May 2026</span>
+          </div>
+          
+          <!-- Right Part -->
+          <div>
+            <div class="edu-meta-grid">
+              <div class="edu-meta-item">
+                <span class="edu-meta-label">CGPA</span>
+                <span class="edu-meta-val">7.65 / 10</span>
+              </div>
+              <div class="edu-meta-item">
+                <span class="edu-meta-label">Status</span>
+                <span class="edu-meta-val">Graduated</span>
+              </div>
+            </div>
+            <div class="edu-coursework">
+              <strong>Relevant Coursework:</strong> Data Structures &amp; Algorithms, Object-Oriented Programming, Operating Systems, Computer Networks, Database Management Systems.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS SECTION -->
+  <section class="section" id="works">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <span class="heading-sub">Portfolio</span>
+        <h2 class="heading-main">My Latest Works</h2>
+      </div>
+      
+      <div class="works-grid">
+        <!-- Work Card 1 (HealthMate) -->
+        <div class="work-card">
+          <div class="work-card-top">
+            <div class="work-tech">Flask · Pinecone · Docker · AWS</div>
+            <h3 class="work-title">HealthMate — Medical AI</h3>
+            <p class="work-desc">RAG-based medical chatbot delivering 95% precision on doctor/research documents over Pinecone vector indexes.</p>
+          </div>
+          <!-- Phone device mockup background -->
+          <div class="work-card-bottom" style="background-color: #fef3c7;">
+            <div class="mockup-container phone-mockup">
+              <div class="phone-screen">
+                <div class="phone-chat-bubble chat-left">Hello! Describe your symptoms.</div>
+                <div class="phone-chat-bubble chat-right">I have a slight fever and throat pain.</div>
+                <div class="phone-chat-bubble chat-left">Understood. I will cross-reference medical research papers...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Work Card 2 (AI Mock Interviewer) -->
+        <div class="work-card">
+          <div class="work-card-top">
+            <div class="work-tech">FAISS · MongoDB · EdgeTTS</div>
+            <h3 class="work-title">AI Mock Interviewer</h3>
+            <p class="work-desc">Sub-second latency voice assistant utilizing FAISS search layers for real-time contextual mock interview questions.</p>
+          </div>
+          <!-- Browser device mockup background -->
+          <div class="work-card-bottom" style="background-color: #ccfbf1;">
+            <div class="mockup-container browser-mockup">
+              <div class="browser-header">
+                <div class="browser-dot"></div>
+                <div class="browser-dot"></div>
+                <div class="browser-dot"></div>
+              </div>
+              <div class="browser-content">
+                <div style="font-size: 0.65rem; font-weight: 700;">Question: How does RAG handle target leakage?</div>
+                <div class="waveform">
+                  <div class="wave-bar" style="height: 12px;"></div>
+                  <div class="wave-bar" style="height: 24px;"></div>
+                  <div class="wave-bar" style="height: 16px;"></div>
+                  <div class="wave-bar" style="height: 8px;"></div>
+                  <div class="wave-bar" style="height: 20px;"></div>
+                </div>
+                <div style="font-size: 0.55rem; color: var(--text-muted);">Latency: 0.8s (End-to-End)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Work Card 3 (Loan Default Prediction) -->
+        <div class="work-card">
+          <div class="work-card-top">
+            <div class="work-tech">FastAPI · Gradient Boosting · SQL</div>
+            <h3 class="work-title">Default Prediction</h3>
+            <p class="work-desc">Stratified dataset preprocessing endpoints built with FastAPI to perform loan failure assessments without data leak risk.</p>
+          </div>
+          <!-- Dashboard mockup background -->
+          <div class="work-card-bottom" style="background-color: #ffe4e6;">
+            <div class="mockup-container dashboard-mockup">
+              <div class="dash-header"></div>
+              <div class="dash-content">
+                <div class="dash-sidebar">
+                  <div class="dash-line" style="width: 50%;"></div>
+                  <div class="dash-line" style="width: 70%;"></div>
+                  <div class="dash-line" style="width: 40%;"></div>
+                </div>
+                <div class="dash-charts">
+                  <div class="bar-chart">
+                    <div class="chart-bar" style="height: 20px;"></div>
+                    <div class="chart-bar" style="height: 45px;"></div>
+                    <div class="chart-bar" style="height: 30px;"></div>
+                  </div>
+                  <div style="font-size: 0.5rem; text-align: center; font-weight: 700;">ML Model Stratified Analysis</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOGNITIONS SECTION ("People talk about us") -->
+  <section class="section section-white" id="recognitions">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <span class="heading-sub">Credentials</span>
+        <h2 class="heading-main">Achievements &amp; Certifications</h2>
+      </div>
+      
+      <div class="testimonials-grid">
+        <!-- Card 1 -->
+        <div class="testimonial-card">
+          <div class="test-badge">
+            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--yellow);"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </div>
+          <p class="test-text">
+            "Achieved elite Gold status by placing in the top 5% of participants in the NPTEL Fundamentals of Artificial Intelligence course."
+          </p>
+          <div class="test-author">
+            <span class="test-name">Fundamentals of AI</span>
+            <span class="test-org">IIT Madras</span>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="testimonial-card">
+          <div class="test-badge">
+            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--teal);"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <p class="test-text">
+            "Graduated in the Elite Top 10% in the NPTEL Deep Learning program, demonstrating robust foundational theory and practice."
+          </p>
+          <div class="test-author">
+            <span class="test-name">Deep Learning</span>
+            <span class="test-org">IIT Ropar</span>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="testimonial-card">
+          <div class="test-badge">
+            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--coral);"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          </div>
+          <p class="test-text">
+            "Completed the GenAI Powered Data Analytics job simulation program, constructing workflows for dashboard reports."
+          </p>
+          <div class="test-author">
+            <span class="test-name">GenAI Data Analytics</span>
+            <span class="test-org">Tata Group (Forage)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER & CONTACT -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Left Footer -->
+        <div class="footer-left">
+          <span class="heading-sub">Contact Me</span>
+          <p class="footer-cta-text">Let's make something<br/>amazing together.</p>
+          <a href="mailto:agnihotriansh05@gmail.com" class="footer-email-link">Start by saying hi</a>
+        </div>
+        
+        <!-- Right Footer -->
+        <div class="footer-right">
+          <div>
+            <div class="info-box-label">Information</div>
+            <div class="info-box-val">New Delhi, India</div>
+          </div>
+          <div>
+            <div class="info-box-label">Call</div>
+            <div class="info-box-val"><a href="tel:+919354616027">+91 93546 16027</a></div>
+          </div>
+          <div>
+            <div class="info-box-label">Socials</div>
+            <div class="info-box-val">
+              <a href="https://linkedin.com/in/ansh-agnihotri" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+              <a href="https://github.com/agnihotri-anxh" target="_blank">GitHub</a>
+            </div>
+          </div>
+          <div>
+            <div class="info-box-label">Resume</div>
+            <div class="info-box-val"><a href="Resume_Ansh_Agnihotri.pdf" download>Download PDF Resume</a></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <span class="footer-signature">Ansh Agnihotri</span>
+        <span>&copy; 2026 Ansh Agnihotri. All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive script -->
+  <script src="js/main.js"></script>
 </body>
-
 </html>
